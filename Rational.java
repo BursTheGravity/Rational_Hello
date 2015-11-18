@@ -22,6 +22,10 @@ public class Rational {
 			numerator = 0;
 			denominator = 1;
 		}
+		if (denom == 0) {
+		    numerator = 0;
+		    denominator = 1;
+		}
 	}
 	
 	public String toString() {
@@ -38,8 +42,8 @@ public class Rational {
 	}
 	
 	public void divide ( Rational n ) {
-		numerator = numerator / n.numerator;
-		denominator = denominator / n.denominator;
+		numerator = numerator * n.denominator;
+		denominator = denominator * n.numerator;
 	}
 	
 	public static void main (String[] args) {
@@ -47,7 +51,7 @@ public class Rational {
 		Rational s = new Rational(1,2); //Stores the rational number 1/2
 		r.multiply(s); //Multiplies r by s, changes r to 2/6.  s remains 1/2;
 		System.out.println(r); //Should be 2/6
-		r.divide(s); //Divides r by s, changes r to 2/3. s remains 1/2;
-		System.out.println(r); //Should be 2/3
+		r.divide(s); //Divides r by s, changes r to 4/6. s remains 1/2;
+		System.out.println(r); //Should be 4/6
 	}
 }
